@@ -10,4 +10,6 @@ For example if you want to run the brain stroke detection,then
 3.then your command prompt will open
 4.now type pip install -r requirements.txt which downloads all the dependencies required to run the project
 5.After that run the project by typing streamlit run main.py
+6.Similarly run for all other diseases by selecting particular folder of the disease
+7.For malaria after selecting CNN-Visualisation-using-Streamlit folder type  pip install -r requirements.txt  and then type streamlit run cnn-streamlit.py for running the malari disease
 
