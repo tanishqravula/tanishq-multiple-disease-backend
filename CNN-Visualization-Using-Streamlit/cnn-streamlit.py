@@ -24,12 +24,12 @@ from keras.models import Model
 
 @st.cache(allow_output_mutation=True,suppress_st_warning=True)
 def load_cnn1():
-    model_ = load_model('C://Users/91770/tanishq malaria streamlit/CNN-Visualization-Using-Streamlit/models/weights1.h5')
+    model_ = load_model('CNN-Visualization-Using-Streamlit/models/weights1.h5')
     return model_
 
 @st.cache(allow_output_mutation=True,suppress_st_warning=True)
 def load_cnn2():
-    model_ = load_model('C://Users/91770/tanishq malaria streamlit/CNN-Visualization-Using-Streamlit/models/weights3.h5')
+    model_ = load_model('CNN-Visualization-Using-Streamlit/models/weights3.h5')
     return model_
 
 def preprocessed_image(file):
@@ -65,11 +65,7 @@ By Tanishq Ravula""")
         st.markdown("#### Preliminary")
         """ 
         
-        This is datasets of segmented cells from the thin blood smear slide images from the Malaria Screener research activity.
-        The Dataset is obtained from researchers at the Lister Hill National Center for Biomedical Communications (LHNCBC),
-        part of National Library of Medicine (NLM), that developed a mobile application that runs on a standard Android smartphone attached to a conventional light microscope. 
-        Giemsa-stained thin blood smear slides from 150 P. falciparum-infected and 50 healthy patients were collected and photographed 
-        at Chittagong Medical College Hospital, Bangladesh. The smartphone’s built-in camera acquired images of slides for each microscopic field of view. 
+        
         The images were manually annotated by an expert slide reader at the Mahidol-Oxford Tropical Medicine Research Unit in Bangkok, Thailand. 
         The de-identified images and annotations are archived at NLM (IRB#12972). then applied a level-set based algorithm to detect and segment the red blood cells. 
         The dataset contains a total of 27,558 cell images with equal instances of parasitized and uninfected cells 
@@ -78,16 +74,7 @@ By Tanishq Ravula""")
         st.markdown("#### Previous research")
         """ 
         
-        The data appear along with the publications : 
-        
-        Rajaraman S, Antani SK, Poostchi M, Silamut K, Hossain MA, Maude, RJ, Jaeger S, Thoma GR. (2018) 
-        Pre-trained convolutional neural networks as feature extractors toward improved Malaria parasite detection in thin blood smear images.
-        
-        link : https://peerj.com/articles/4568/ 
-        
-        Rajaraman S, Jaeger S, Antani SK. (2019) Performance evaluation of deep neural ensembles toward malaria parasite detection in thin-blood smear images
-        
-        link : https://peerj.com/articles/6977/
+       
         """
         
         st.markdown("#### Links for Malaria Dataset")
