@@ -1,23 +1,12 @@
 import streamlit as st
 import tensorflow as tf
 import random
-from reportlab.lib.pagesizes import letter
-from reportlab.pdfgen import canvas
 from PIL import Image, ImageOps
 import numpy as np
-import openai
 import requests
-from requests.exceptions import ConnectionError, ReadTimeout
-from moviepy.editor import *
-from bs4 import BeautifulSoup
-from summarizer import Summarizer
-import textwrap
 import time
 import os
-import yt_dlp
 import base64
-from transformers import BartForConditionalGeneration, BartTokenizer
-import pyttsx3
 import matplotlib.pyplot as plt 
 import os
 import numpy as np
@@ -30,8 +19,8 @@ import tensorflow as tf
 from keras.models import load_model
 from keras.models import Model
 
-st.set_option('deprecation.showfileUploaderEncoding', False)
-openai.api_key = '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'
+#st.set_option('deprecation.showfileUploaderEncoding', False)
+
 
 @st.cache(allow_output_mutation=True,suppress_st_warning=True)
 def load_cnn1():
@@ -164,41 +153,7 @@ By Tanishq Ravula""")
                 if predictions == 1:
                     
                     st.error("Cells get parasitized")
-                    try:
-                        
-                        response = openai.Completion.create(engine="text-davinci-003",
-                                                prompt='Ways to recover from malaria',
-                                                max_tokens=700)
-            # Display the chatbot's response
-                        st.text_area("Ways to recover:", value=response.choices[0].text.strip(), height=1000)
-                    except Exception as e:
-                        
-                        st.error("An error occurred: {}".format(e))
-                    search_query = "Ways to recover from  malaria"
-                    if "video_generated" not in st.session_state:
-                        st.session_state.video_generated = False
-                    if search_query and not st.session_state.video_generated:
-                        
-                        
-                        try:
-                            
-                            ydl_opts = {
-                            'format': 'best',
-                             'quiet': True,
-                            }
-                            with yt_dlp.YoutubeDL(ydl_opts) as ydl:
-                                
-                                if search_query.isdigit():
-                                    
-                                    video_url = f'https://www.youtube.com/watch?v={search_query}'
-                                else:
-                                    
-                                    info_dict = ydl.extract_info(f"ytsearch:{search_query}", download=False)
-                                    video_url = info_dict['entries'][0]['url']
-                            st.video(video_url)
-                            st.session_state.video_generated = True
-                        except Exception as e:
-                            st.error(f"An error occurred: {e}")   
+                    
                 elif predictions == 0:
                     st.success("Cells is healty Uninfected")
                     st.balloons()
