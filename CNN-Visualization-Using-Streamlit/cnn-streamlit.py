@@ -3,18 +3,11 @@ import tensorflow as tf
 import random
 from PIL import Image, ImageOps
 import numpy as np
-import requests
-import time
 import os
-import base64
 import matplotlib.pyplot as plt 
-import os
-import numpy as np
-import datetime
 import itertools
 import h5py
 import io
-from PIL import Image
 import tensorflow as tf
 from keras.models import load_model
 from keras.models import Model
@@ -24,12 +17,12 @@ from keras.models import Model
 
 @st.cache(allow_output_mutation=True,suppress_st_warning=True)
 def load_cnn1():
-    model_ = load_model('CNN-Visualization-Using-Streamlit/models/weights1.h5')
+    model_ = load_model('models/weights1.h5')
     return model_
 
 @st.cache(allow_output_mutation=True,suppress_st_warning=True)
 def load_cnn2():
-    model_ = load_model('CNN-Visualization-Using-Streamlit/models/weights3.h5')
+    model_ = load_model('models/weights3.h5')
     return model_
 
 def preprocessed_image(file):
@@ -54,8 +47,7 @@ def main():
     st.sidebar.title('Web Apps using Streamlit')
     st.sidebar.text(""" Project to visualize the CNN layers 
  on malaria-infected image
- 
-By Tanishq Ravula""")
+ """)
     menu = {1:"Home",2:"Visualization of Dataset",3:"Perform Prediction"}
     def format_func(option):
         return menu[option]
