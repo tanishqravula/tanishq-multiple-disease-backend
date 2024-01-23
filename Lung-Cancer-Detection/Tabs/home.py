@@ -10,7 +10,7 @@ def app():
     st.title("Lung Cancer Predictor")
 
     # Add image to the home page
-    st.image("Lung-Cancer-Detection/images/home.jpeg")
+    st.image("./images/home.jpeg")
 
     # Add brief describtion of your web app
     st.markdown(
